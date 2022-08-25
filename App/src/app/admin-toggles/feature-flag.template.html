@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row" style="margin-top: 50px">
+    <div class="col-md-12 text-center">
+      
+      <div class="outer-form">
+        <table class="table-striped table table-bordered vertical">
+          <thead
+            style="color: white; font-weight: normal; background-color: black"
+          >
+            <tr>
+              <th class="head">S.No.</th>
+              <th class="head">feature Name</th>
+              <th class="head">Status</th>
+            </tr>
+          </thead>
+
+          <tbody
+            style="
+              border: 1px solid transparent;
+              background-color: #242424;
+              color: #a1a6ab;
+              text-align: left;
+            "
+          >
+            <tr *ngFor="let feature of featureFlags;let i = index;">
+              <td style="padding: 14px">{{i+1}}</td>
+              <td>{{feature.name}}</td>
+              <td>
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="feature.status"
+                    (change)="handleChange()"
+                  />
+                  <span class="slider round"></span>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
